@@ -1,0 +1,102 @@
+﻿<Window x:Class="F1_Explorer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:F1_Explorer"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="900" Width="1500">
+    <Grid Background="#DC0449">
+        <!-- division du grid principale en 2 Colonne -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="9*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="1.5*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.Resources>
+
+            <Style TargetType="{x:Type Label}">
+                <Setter Property="Background" Value="#DC0449"/>
+                <Setter Property="FontSize" Value="29.5"/>
+                <Setter Property="HorizontalContentAlignment" Value="center"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="FontStyle" Value="Italic"/>
+            </Style>
+
+        </Grid.Resources>
+
+        <Grid Grid.Column="1" Grid.Row="1" Name="Container"/>
+
+
+        <Label Grid.Row="0" Grid.Column="1" Content="F1 NAVIGATOR"/>
+        <Image Grid.Column="1" Grid.Row="2" Source="\Ressource\Icon\F1.png" HorizontalAlignment="Center"/>
+
+
+        <!-- division du grid 1 (selecteur en 5 lignes colonne -->
+        <Grid Grid.Column="0" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1.8*"/>
+                <RowDefinition Height="1.8*"/>
+                <RowDefinition Height="1.8*"/>
+                <RowDefinition Height="1.8*"/>
+                <RowDefinition Height="1.8*"/>
+            </Grid.RowDefinitions>
+         
+
+            <!-- définition du style pour les boutton du selecteur-->
+            <Grid.Resources>
+
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Margin" Value="5"/>
+                    <Setter Property="BorderBrush" Value="#990033"/>
+                    <Setter Property="Background" Value="#990033"/>
+                </Style>
+                
+           </Grid.Resources>
+            
+            <!-- def du boutton pour page des qualifs-->
+            <Button Grid.Row="1" Name="BP_QUALIF" Click="BP_QUALIF_Click">
+                <StackPanel Orientation="Vertical">
+                    <Image Source="\Ressource\Icon\Qualif.png" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            
+            <!-- def du boutton pour page des courses-->
+            <Button Grid.Row="2" Name="BP_RESULT" Click="BP_RESULT_Click">
+                <StackPanel Orientation="Vertical">
+                    <Image Source="\Ressource\Icon\Course.png" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            
+            <!-- def du boutton pour page des pilotes-->
+            <Button Grid.Row="3" Name="BP_PILOTES" Click="BP_PILOTES_Click">
+                <StackPanel Orientation="Vertical">
+                    <Image Source="\Ressource\Icon\Pilotes.png" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+
+            <!-- def du boutton pour page des Circuits-->
+            <Button Grid.Row="4" Name="BP_CIRCUIT" Click="BP_CIRCUIT_Click">
+                <StackPanel Orientation="Vertical">
+                    <Image Source="\Ressource\Icon\Circuit.png" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+
+            <!-- def du boutton pour page des Circuits-->
+            <Button Grid.Row="5" Name="BP_CONSTRUCTEUR" Height="117" Margin="5,5,5,0" VerticalAlignment="Top" Click="BP_CONSTRUCTEUR_Click">
+                <StackPanel Orientation="Vertical">
+                    <Image Source="\Ressource\Icon\Constructeur.png" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+
+        </Grid>
+</Grid>
+
+</Window>

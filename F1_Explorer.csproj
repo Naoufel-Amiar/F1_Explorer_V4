@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{51558F8D-F6EA-43A5-B1DC-EF80C86378A0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>F1_Explorer</RootNamespace>
+    <AssemblyName>F1_Explorer</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Service\CircuitManager.cs" />
+    <Compile Include="Service\PiloteManager.cs" />
+    <Compile Include="Service\QualificationManager.cs" />
+    <Compile Include="Service\ResultManager.cs" />
+    <Compile Include="View\Circuits.xaml.cs">
+      <DependentUpon>Circuits.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ecuries.xaml.cs">
+      <DependentUpon>Ecuries.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pilotes.xaml.cs">
+      <DependentUpon>Pilotes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Qualif.xaml.cs">
+      <DependentUpon>Qualif.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Result.xaml.cs">
+      <DependentUpon>Result.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\Circuits.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Ecuries.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pilotes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Qualif.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Result.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressource\Icon\Circuit.png" />
+    <Resource Include="Ressource\Icon\Course.png" />
+    <Resource Include="Ressource\Icon\Qualif.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressource\Icon\Pilotes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressource\Icon\Constructeur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressource\Icon\F1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressource\Icon\Third.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressource\Icon\First.png" />
+    <Resource Include="Ressource\Icon\Second.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressource\Liste_Pilotes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressource\PILOTES_IMG\albers.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\alguersuari.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\alonso.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\badoer.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\barrichello.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\baumgartner.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\bottas.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\brendon_hartley.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\bruni.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\buemi.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\button.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\chandhok.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\chilton.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\coulthard.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\doornbos.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\ericsson.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\firman.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\fisichella.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\frentzen.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\friesacher.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\garde.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\gasly.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\gene.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\giovinazzi.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\glock.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\grassi.JPG" />
+    <Resource Include="Ressource\PILOTES_IMG\grosjean.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\gutierrez.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\haryanto.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\heidfeld.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\hulkenberg.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\ide.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\jolyon_palmer.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\karthikeyan.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\kevin_magnussen.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\kiesa.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\klien.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\kobayashi.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\kubica.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\kvyat.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\lawson.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\leclerc.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\liuzzi.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\lotterer.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\maldonado.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\massa.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\massi.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\matta.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\max_verstappen.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\mazepin.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\merhi.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\michael_schumacher.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\mick_schumacher.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\montagny.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\monteiro.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\montoya.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\nakajima.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\nasr.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\ocon.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\panis.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\pantano.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\perez.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\petrov.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\piastri.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\pic.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\piquet_jr.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\pizzonia.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\raikkonen.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\ralf_schumacher.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\ricciardo.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\rosa.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\rosberg.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\rossi.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\sainz.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\sargeant.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\sato.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\speed.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\stevens.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\sutil.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\trulli.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\tsunoda.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\vandoorne.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\verstappen.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\vettel.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\villeneuve.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\webber.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\wehrlein.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\wilson.jpg" />
+    <Resource Include="Ressource\PILOTES_IMG\zhou.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressource\Liste_Ecuries.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressource\ECURIE_IMG\alfa.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\alphatauri.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\alpine.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\aston_martin.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\bar.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\bmw_sauber.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\brawn.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\ferrari.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\force_india.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\haas.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\honda.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\hrt.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\jaguar.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\jordan.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\lotus_racing.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\manor.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\mclaren.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\mercedes.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\mf1.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\minardi.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\racing_point.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\red_bull.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\renault.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\sauber.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\spyker.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\spyker_mf1.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\super_aguri.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\toro_rosso.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\toyota.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\virgin.jpg" />
+    <Resource Include="Ressource\ECURIE_IMG\williams.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressource\Liste_Circuits.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressource\PILOTES_IMG\hamilton.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressource\CIRCUITS_IMG\albert_park.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\americas.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\bahrain.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\baku.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\buddh.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\catalunya.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\fuji.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\hockenheimring.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\hungaroring.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\imola.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\indianapolis.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

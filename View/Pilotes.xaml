@@ -1,0 +1,137 @@
+﻿<UserControl x:Class="F1_Explorer.View.Pilotes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:F1_Explorer.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1350">
+    <Grid Background="#DC0449">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="9*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="8.5*"/>
+        </Grid.RowDefinitions>
+
+        <!--Création du style pour le CB-->
+        <Grid.Resources>
+            <Style TargetType="{x:Type ComboBox}">
+                <Setter Property="Background" Value="#FB747B"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="FontFamily" Value="Arial"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="FontStyle" Value="Italic"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ComboBox}">
+                            <Grid>
+                                <ToggleButton
+                                Name="ToggleButton"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Background="{TemplateBinding Background}"
+                                Foreground="{TemplateBinding Foreground}"
+                                Focusable="False"
+                                IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                            />
+                                <ContentPresenter
+                                Name="ContentSite"
+                                Content="{TemplateBinding SelectionBoxItem}"
+                                ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                                Margin="3,3,23,3"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Left"
+                                
+                            />
+                                <Popup
+                                Name="Popup"
+                                Placement="Bottom"
+                                IsOpen="{TemplateBinding IsDropDownOpen}"
+                                AllowsTransparency="True"
+                                Focusable="False"
+                                PopupAnimation="Slide"
+                            >
+                                    <Grid
+                                    Name="DropDown"
+                                    SnapsToDevicePixels="True"
+                                    MinWidth="{TemplateBinding ActualWidth}"
+                                    MaxHeight="{TemplateBinding MaxDropDownHeight}"
+                                >
+                                        <Border
+                                        x:Name="DropDownBorder"
+                                        Background="{TemplateBinding Background}"
+                                        BorderThickness="1"
+                                        BorderBrush="red"
+                                    />
+                                        <ScrollViewer
+                                        Margin="4,6,4,6"
+                                        SnapsToDevicePixels="True"
+                                        HorizontalScrollBarVisibility="Auto"
+                                        VerticalScrollBarVisibility="Auto"
+                                    >
+                                            <ItemsPresenter
+                                            KeyboardNavigation.DirectionalNavigation="Contained"
+                                        />
+                                        </ScrollViewer>
+                                    </Grid>
+                                </Popup>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Grid.Resources>
+
+        <ComboBox Width="250" Height="60" Grid.Column="1" x:Name="CB_PILOTE" HorizontalAlignment="Left" SelectionChanged="CB_PILOTE_SelectionChanged" />
+        <Image Grid.Column="1" Source="\Ressource\Icon\Pilotes.png" HorizontalAlignment="Right"/>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="3.5*"/>
+            </Grid.RowDefinitions>
+
+            <!--Création du style pour les TB-->
+            <Grid.Resources>
+
+                <Style TargetType="{x:Type TextBox}">
+                    <Setter Property="Margin" Value="5"/>
+                    <Setter Property="BorderBrush" Value="#DC0449"/>
+                    <Setter Property="Background" Value="#DC0449"/>
+                    <Setter Property="FontSize" Value="35"/>
+                    <Setter Property="TextAlignment" Value="Left"/>
+                    <Setter Property="FontStyle" Value="Normal"/>
+                </Style>
+
+            </Grid.Resources>
+
+            <!--Création des TB pour afficher les donnes du pilote-->
+            <TextBox Grid.Row="0" Grid.Column="0" Name="TB_NAME" Text="NAME"/>
+            <TextBox Grid.Row="0" Grid.Column="2" Name="TB_NUMBER" Text="NUMBER"/>
+            
+            
+            <TextBox Grid.Row="1" Grid.Column="0" Name="TB_BIRTH" Text="BIRTH"/>
+            <TextBox Grid.Row="1" Grid.Column="2" Name="TB_NATIO" Text="NATIO"/>
+
+
+            <!--Création des espaces pour le profil de pilote-->
+            <Image Grid.Column="1" Grid.Row="2" Name="PROFIL_PILOTE"/>
+
+
+        </Grid>
+
+    </Grid>
+</UserControl>
