@@ -59,6 +59,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Service\CircuitManager.cs" />
+    <Compile Include="Service\EcurieManager.cs" />
     <Compile Include="Service\PiloteManager.cs" />
     <Compile Include="Service\QualificationManager.cs" />
     <Compile Include="Service\ResultManager.cs" />
@@ -159,7 +160,10 @@
     <Resource Include="Ressource\Icon\Second.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Ressource\Liste_Pilotes.txt" />
+    <Content Include="Ressource\Liste_Pilotes.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Ressource\PILOTES_IMG\norris.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Ressource\PILOTES_IMG\albers.jpg" />
@@ -253,7 +257,9 @@
     <Resource Include="Ressource\PILOTES_IMG\zhou.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Ressource\Liste_Ecuries.txt" />
+    <Content Include="Ressource\Liste_Ecuries.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Ressource\ECURIE_IMG\alfa.jpg" />
@@ -289,7 +295,9 @@
     <Resource Include="Ressource\ECURIE_IMG\williams.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Ressource\Liste_Circuits.txt" />
+    <Content Include="Ressource\Liste_Circuits.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Ressource\PILOTES_IMG\hamilton.jpg" />
@@ -306,6 +314,36 @@
     <Resource Include="Ressource\CIRCUITS_IMG\hungaroring.jpg" />
     <Resource Include="Ressource\CIRCUITS_IMG\imola.jpg" />
     <Resource Include="Ressource\CIRCUITS_IMG\indianapolis.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\interlagos.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\istanbul.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\jeddah.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\losail.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\magny_cours.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\marina_bay.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\miami.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\monaco.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\monza.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\mugello.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\nurburgring.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\portimao.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\red_bull_ring.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\ricard.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\rodriguez.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\sepang.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\shanghai.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\silverstone.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\sochi.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\spa.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\suzuka.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\valencia.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\vegas.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\villeneuve.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\yas_marina.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\yeongam.jpg" />
+    <Resource Include="Ressource\CIRCUITS_IMG\zandvoort.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressource\PILOTES_IMG\kovalainen.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

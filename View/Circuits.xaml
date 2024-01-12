@@ -6,7 +6,9 @@
              xmlns:local="clr-namespace:F1_Explorer.View"
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1350">
+    
     <Grid Background="#DC0449">
+        <!-- division du grid principale en 2 Colonne -->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="9*"/>

@@ -24,6 +24,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
             <!--Création du style pour le CB-->
@@ -97,8 +98,10 @@
                 </Style>
             </Grid.Resources>
 
-            <ComboBox Width="250" Height="60" Grid.Column="0" x:Name="CB_ANNE" SelectionChanged="CB_ANNE_SelectionChanged"/>
-            <Image Grid.Column="1" Source="\Ressource\Icon\Qualif.png" HorizontalAlignment="Right"/>
+            <ComboBox Width="250" Height="60" Grid.Column="0" x:Name="CB_ANNE" SelectionChanged="CB_ANNE_SelectionChanged_1"/>
+            <ComboBox Width="250" Height="60" Grid.Column="1" x:Name="CB_NUM" SelectionChanged="CB_NUM_SelectionChanged"/>
+
+            <Image Grid.Column="2" Source="\Ressource\Icon\Qualif.png" HorizontalAlignment="Right"/>
         </Grid>
         
         <!-- division du grid 1 (Affichage des donnés) -->
@@ -107,14 +110,8 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.68*"/>
             </Grid.ColumnDefinitions>
-
-            <Grid.RowDefinitions>
-                <RowDefinition Height="3*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="3.5*"/>
-                <RowDefinition Height="2.5*"/>
-            </Grid.RowDefinitions>
 
             <!--Création du style pour les TB-->
             <Grid.Resources>
@@ -130,23 +127,63 @@
 
             </Grid.Resources>
 
-            <Image Grid.Column="0" Grid.Row="2" Name="IMG_PIL2"/>
-            <Image Grid.Column="1" Grid.Row="2" Name="IMG_PIL1"/>
-            <Image Grid.Column="2" Grid.Row="2" Name="IMG_PIL3"/>
+            <Grid  Grid.Column="0">
 
-            <!--Création des espaces pour les images du podium-->
-            <Image Grid.Column="2" Height="150" Source="\Ressource\Icon\Third.png" HorizontalAlignment="Center"/>
-            <Image Grid.Column="1" Height="200" Source="\Ressource\Icon\First.png" HorizontalAlignment="Center"/>
-            <Image Grid.Column="0" Height="170" Source="\Ressource\Icon\Second.png" HorizontalAlignment="Center"/>
-            
-            <!--Création des TB pour afficher les donnes du pilotes-->
-            <TextBox Grid.Row="1" Grid.Column="0" Name="TB_QUAL2_NAME" Text="N°2 Name"/>
-            <TextBox Grid.Row="1" Grid.Column="1" Name="TB_QUAL1_NAME" Text="N°1 Name"/>
-            <TextBox Grid.Row="1" Grid.Column="2" Name="TB_QUAL3_NAME" Text="N°3 Name"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="1.4*"/>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="2.5*"/>
+                </Grid.RowDefinitions>
 
-            <TextBox Grid.Row="3" Grid.Column="0" Name="TB_QUAL2_TIME" Text="N°2 Time"/>
-            <TextBox Grid.Row="3" Grid.Column="1" Name="TB_QUAL1_TIME" Text="N°1 Time"/>
-            <TextBox Grid.Row="3" Grid.Column="2" Name="TB_QUAL3_TIME" Text="N°3 Time"/>
+                <Image Grid.Column="1" Grid.Row="0" Height="90" Source="\Ressource\Icon\Second.png" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Name="TB_QUAL2" Text="N°2"/>
+                <Image Grid.Column="1" Grid.Row="2" Name="IMG_PIL2"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Name="TB_TIME2" Text="Time2"/>
+
+
+
+
+            </Grid>
+
+            <Grid  Grid.Column="1">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="1.4*"/>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="2.5*"/>
+                </Grid.RowDefinitions>
+
+                <Image Grid.Column="1" Grid.Row="0" Height="170" Source="\Ressource\Icon\First.png" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Name="TB_QUAL1" Text="N°1"/>
+                <Image Grid.Column="1" Grid.Row="2" Name="IMG_PIL1"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Name="TB_TIME1" Text="Time1"/>
+
+
+            </Grid>
+
+            <Grid  Grid.Column="2">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="1.4*"/>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="2.5*"/>
+                </Grid.RowDefinitions>
+
+                <Image Grid.Column="1" Grid.Row="0" Height="96" Source="\Ressource\Icon\Third.png" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="1"  Name="TB_QUAL3" Text="N°3"/>
+                <Image Grid.Column="1" Grid.Row="2" Name="IMG_PIL3"/>
+                <TextBox Grid.Row="3" Name="TB_TIME3" Text="Time3"/>
+
+            </Grid>
+
+            <Grid  Grid.Column="3">
+                <DataGrid x:Name="DG_Circuit"/>
+
+
+            </Grid>
 
         </Grid>
         

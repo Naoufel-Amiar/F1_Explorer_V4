@@ -18,20 +18,20 @@ using System.IO;
 
 namespace F1_Explorer.View
 {
-    /// <summary>
-    /// Logique d'interaction pour Ecuries.xaml
-    /// </summary>
+
     public partial class Ecuries : UserControl
     {
-        //string Name = "monza";
+        private EcurieManager EcurieManager;
+        string ecur = "mclaren";
         List<string> EcurieList;
-        string cheminFichierEcurie = "C:/Users/Naoufel/Downloads/F1_Explorer_V2-master/F1_Explorer_V2-master/Ressource/Liste_Ecuries.txt";
+        string cheminFichierEcurie = "Ressource/Liste_Ecuries.txt";
 
 
         public Ecuries()
         {
             InitializeComponent();
-
+            EcurieManager = new EcurieManager();
+            MethodAsync(ecur);
             EcurieList = new List<string>(File.ReadAllLines(cheminFichierEcurie));
             //Ajout des Pilotes au ComboBox
             foreach (var ECURIE in EcurieList)
@@ -40,9 +40,26 @@ namespace F1_Explorer.View
             }
         }
 
+        public async void MethodAsync(string ecur)
+        {
+            EcurieManager.MRData MRData = await EcurieManager.Getecuries(ecur);
+
+            if (MRData != null)
+            {   //chemin utiliser dans la classe pour utiliser les info
+                EcurieManager.ConstructorTable constructorTable = MRData.ConstructorTable;
+                EcurieManager.Constructor constructor = constructorTable.Constructors[0];
+                TB_NATIO.Text = "NATIONALITY: " + constructor.nationality;
+
+                //INSERTION DE SCHEMA
+                Uri resourceUri = new Uri("/Ressource/ECURIE_IMG/" + ecur + ".jpg", UriKind.Relative);//affiche une image en fonction du nom du pilote
+                ECURIE_PROFIL.Source = new BitmapImage(resourceUri);
+            }
+        }
+
         private void CB_ECURIE_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string SelectedEcurie = CB_ECURIE.SelectedValue.ToString();
+        _: MethodAsync(SelectedEcurie);
 
         }
     }

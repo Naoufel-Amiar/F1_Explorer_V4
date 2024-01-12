@@ -43,6 +43,7 @@ rosa
 doornbos
 friesacher
 karthikeyan
+kovalainen
 liuzzi
 kubica
 ide

@@ -6,13 +6,16 @@
         xmlns:local="clr-namespace:F1_Explorer"
         mc:Ignorable="d"
         Title="MainWindow" Height="900" Width="1500">
+
     <Grid Background="#DC0449">
+        
         <!-- division du grid principale en 2 Colonne -->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="9*"/>
         </Grid.ColumnDefinitions>
 
+        <!-- division du grid principale en 3 ligne Colonne -->
         <Grid.RowDefinitions>
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="8*"/>
@@ -30,10 +33,10 @@
             </Style>
 
         </Grid.Resources>
-
+        <!-- On nomme la surface de l'ecran qui acueille les page -->
         <Grid Grid.Column="1" Grid.Row="1" Name="Container"/>
-
-
+        
+        <!-- Affichage du nom de appli et visuel -->
         <Label Grid.Row="0" Grid.Column="1" Content="F1 NAVIGATOR"/>
         <Image Grid.Column="1" Grid.Row="2" Source="\Ressource\Icon\F1.png" HorizontalAlignment="Center"/>
 

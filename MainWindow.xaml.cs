@@ -29,9 +29,10 @@ namespace F1_Explorer
         {
             InitializeComponent();
         }
-
         
+        //UTILISATION DES BOUTTONS POUR CHANGER DE PAGES
 
+        //QUALIFICATION
         private void BP_QUALIF_Click(object sender, RoutedEventArgs e)
         {
             Container.Children.Clear();
@@ -39,6 +40,7 @@ namespace F1_Explorer
             Container.Children.Add(qualif);
         }
 
+        //RESULTAT DE COURSE
         private void BP_RESULT_Click(object sender, RoutedEventArgs e)
         {
             Container.Children.Clear();
@@ -46,6 +48,7 @@ namespace F1_Explorer
             Container.Children.Add(result);
         }
 
+        //INFO SUR LES PILOTES
         private void BP_PILOTES_Click(object sender, RoutedEventArgs e)
         {
             Container.Children.Clear();
@@ -53,6 +56,7 @@ namespace F1_Explorer
             Container.Children.Add(pilotes);
         }
 
+        //INFO SUR LES CIRCUITS
         private void BP_CIRCUIT_Click(object sender, RoutedEventArgs e)
         {
             Container.Children.Clear();
@@ -60,6 +64,7 @@ namespace F1_Explorer
             Container.Children.Add(circuit);
         }
 
+        //INFO SUR LES ECURIES
         private void BP_CONSTRUCTEUR_Click(object sender, RoutedEventArgs e)
         {
             Container.Children.Clear();
