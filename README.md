@@ -8,7 +8,7 @@ Développée en **C# WPF** avec une architecture **MVC**, cette application util
 ## 🚀 **Fonctionnalités principales**  
 
 | 🏁 Fonctionnalité |
-|------------------|--------|
+|------------------|
 | 📆 Liste des saisons depuis 2000 |
 | 🏎️ Infos sur les pilotes et leurs équipes |
 | 🏟️ Circuits et Grand Prix |
